@@ -1,0 +1,69 @@
+/* Filtres pour le mode daltonien */
+
+/* Protanopie (daltonisme rouge-vert) */
+.protanopia {
+    filter: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="protanopia"><feColorMatrix type="matrix" values="0.567, 0.433, 0,     0, 0 0.558, 0.442, 0,     0, 0 0,     0.242, 0.758, 0, 0 0,     0,     0,     1, 0"/></filter></svg>#protanopia');
+}
+
+/* Deutéranopie (daltonisme vert-rouge) */
+.deuteranopia {
+    filter: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="deuteranopia"><feColorMatrix type="matrix" values="0.625, 0.375, 0,   0, 0 0.7,   0.3,   0,   0, 0 0,     0.3,   0.7, 0, 0 0,     0,     0,   1, 0"/></filter></svg>#deuteranopia');
+}
+
+/* Tritanopie (daltonisme bleu-jaune) */
+.tritanopia {
+    filter: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="tritanopia"><feColorMatrix type="matrix" values="0.95, 0.05,  0,     0, 0 0,    0.433, 0.567, 0, 0 0,    0.475, 0.525, 0, 0 0,    0,     0,     1, 0"/></filter></svg>#tritanopia');
+}
+
+/* Alternative avec des ajustements de contraste supplémentaires */
+.protanopia * {
+    /* Renforcer les contrastes pour la protanopie */
+}
+
+.deuteranopia * {
+    /* Renforcer les contrastes pour la deutéranopie */
+}
+
+.tritanopia * {
+    /* Renforcer les contrastes pour la tritanopie */
+}
+
+/* Amélioration de la lisibilité en mode daltonien */
+.protanopia .text-red-500,
+.deuteranopia .text-red-500 {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.protanopia .text-green-500,
+.deuteranopia .text-green-500 {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.tritanopia .text-blue-500,
+.tritanopia .text-yellow-500 {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Ajustements pour les badges et boutons colorés */
+.protanopia .bg-red-500,
+.deuteranopia .bg-red-500 {
+    border: 2px solid currentColor;
+}
+
+.protanopia .bg-green-500,
+.deuteranopia .bg-green-500 {
+    border: 2px dashed currentColor;
+}
+
+.tritanopia .bg-blue-500,
+.tritanopia .bg-yellow-500 {
+    border: 2px solid currentColor;
+}
